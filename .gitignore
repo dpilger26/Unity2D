@@ -1,0 +1,27 @@
+BlockBreaker/.vs/*
+BlockBreaker/Builds/*
+BlockBreaker/obj/*
+BlockBreaker/Logs/*
+Glitch Garden/.vs/*
+Glitch Garden/obj/*
+Glitch Garden/Logs/*
+HelloWorld/.vs/*
+HelloWorld/obj/*
+HelloWorld/Logs/*
+Lazer Defender/.vs/*
+Lazer Defender/Build/*
+Lazer Defender/obj/*
+Lazer Defender/Logs/*
+Number Wizard Console/.vs/*
+Number Wizard Console/obj/*
+Number Wizard Console/Logs/*
+NumberWizardUI/.vs/*
+NumberWizardUI/obj/*
+NumberWizardUI/Logs/*
+PlayingWithSprites/.vs/*
+PlayingWithSprites/obj/*
+PlayingWithSprites/Logs/*
+Text101/.vs/*
+Text101/WebGL_Game/*
+Text101/obj/*
+Text101/Logs/*
