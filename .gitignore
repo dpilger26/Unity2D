@@ -4,27 +4,27 @@ BlockBreaker/Library/*
 BlockBreaker/Logs/*
 BlockBreaker/obj/*
 BlockBreaker/Packages/*
-Glitch\ Garden/.vs/*
-Glitch\ Garden/Library/*
-Glitch\ Garden/Logs/*
-Glitch\ Garden/obj/*
-Glitch\ Garden/Packages/*
+"Glitch Garden/.vs/*"
+"Glitch Garden/Library/*"
+"Glitch Garden/Logs/*"
+"Glitch Garden/obj/*"
+"Glitch Garden/Packages/*"
 HelloWorld/.vs/*
 HelloWorld/Library/*
 HelloWorld/Logs/*
 HelloWorld/obj/*
 HelloWorld/Packages/*
-Lazer\ Defender/.vs/*
-Lazer\ Defender/Build/*
-Lazer\ Defender/Library/*
-Lazer\ Defender/Logs/*
-Lazer\ Defender/obj/*
-Lazer\ Defender/Packages/*
-Number\ Wizard Console/.vs/*
-Number\ Wizard Console/Library/*
-Number\ Wizard Console/Logs/*
-Number\ Wizard Console/obj/*
-Number\ Wizard Console/Packages/*
+"Lazer Defender/.vs/*"
+"Lazer Defender/Build/*"
+"Lazer Defender/Library/*"
+"Lazer Defender/Logs/*"
+"Lazer Defender/obj/*"
+"Lazer Defender/Packages/*"
+"Number Wizard Console/.vs/*"
+"Number Wizard Console/Library/*"
+"Number Wizard Console/Logs/*"
+"Number Wizard Console/obj/*"
+"Number Wizard Console/Packages/*"
 NumberWizardUI/.vs/*
 NumberWizardUI/Library/*
 NumberWizardUI/Logs/*
