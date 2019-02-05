@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac47e63b7ef2584ca710eb5c53b9203, type: 3}
+  m_Name: StartingState
+  m_EditorClassIdentifier: 
+  storyText: "There are two doors in front of you, a blue door and a red door. \r\n\r\nWhich
+    door would you like to go through?\r\n1. Press 1 for the red door.\r\n2. Press
+    2 for the blue door. "
+  nextStates:
+  - {fileID: 11400000, guid: d00b260e61b71df4c94f0b62b0440089, type: 2}
+  - {fileID: 11400000, guid: a4bd2469666f8374aa6757caa0189f02, type: 2}

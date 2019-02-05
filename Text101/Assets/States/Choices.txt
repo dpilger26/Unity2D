@@ -1,0 +1,5 @@
+There are two doors in front of you, a blue door and a red door. 
+
+Would door would you like to go through?
+1. Press 'r' for the red door.
+2. Press 'b' for the blue door. 
