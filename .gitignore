@@ -1,27 +1,43 @@
 BlockBreaker/.vs/*
 BlockBreaker/Builds/*
-BlockBreaker/obj/*
+BlockBreaker/Library/*
 BlockBreaker/Logs/*
+BlockBreaker/obj/*
+BlockBreaker/Packages/*
 Glitch Garden/.vs/*
-Glitch Garden/obj/*
+Glitch Garden/Library/*
 Glitch Garden/Logs/*
+Glitch Garden/obj/*
+Glitch Garden/Packages/*
 HelloWorld/.vs/*
-HelloWorld/obj/*
+HelloWorld/Library/*
 HelloWorld/Logs/*
+HelloWorld/obj/*
+HelloWorld/Packages/*
 Lazer Defender/.vs/*
 Lazer Defender/Build/*
-Lazer Defender/obj/*
+Lazer Defender/Library/*
 Lazer Defender/Logs/*
+Lazer Defender/obj/*
+Lazer Defender/Packages/*
 Number Wizard Console/.vs/*
-Number Wizard Console/obj/*
+Number Wizard Console/Library/*
 Number Wizard Console/Logs/*
+Number Wizard Console/obj/*
+Number Wizard Console/Packages/*
 NumberWizardUI/.vs/*
-NumberWizardUI/obj/*
+NumberWizardUI/Library/*
 NumberWizardUI/Logs/*
+NumberWizardUI/obj/*
+NumberWizardUI/Packages/*
 PlayingWithSprites/.vs/*
-PlayingWithSprites/obj/*
+PlayingWithSprites/Library/*
 PlayingWithSprites/Logs/*
+PlayingWithSprites/obj/*
+PlayingWithSprites/Packages/*
 Text101/.vs/*
-Text101/WebGL_Game/*
-Text101/obj/*
+Text101/Library/*
 Text101/Logs/*
+Text101/obj/*
+Text101/Packages/*
+Text101/WebGL_Game/*
