@@ -19,4 +19,9 @@ public class Defender : MonoBehaviour
     {
         starDisplay.AddStars(numStars);
     }
+
+    public int GetStarCost()
+    {
+        return starCost;
+    }
 }

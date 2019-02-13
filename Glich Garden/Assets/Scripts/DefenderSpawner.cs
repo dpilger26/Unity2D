@@ -4,11 +4,35 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
+    // configurable parameters
     Defender defenderPrefab;
+
+    // cashed parameters
+    StarDisplay starDisplay;
+
+    private void Update()
+    {
+        starDisplay = FindObjectOfType<StarDisplay>();
+    }
+
+    public void SetSelectedDefender(Defender selectedDefender)
+    {
+        defenderPrefab = selectedDefender;
+    }
 
     private void OnMouseDown()
     {
-        SpawnDefender(GetSquareClicked());
+        AttemptToPlaceDefenderAt(GetSquareClicked());
+    }
+
+    private void AttemptToPlaceDefenderAt(Vector2 gridPos)
+    {
+        int defenderCost = defenderPrefab.GetStarCost();
+        if (starDisplay.HaveEnoughStars(defenderCost))
+        {
+            SpawnDefender(gridPos);
+            starDisplay.SubtractStars(defenderCost);
+        }
     }
 
     private Vector2 GetSquareClicked()
@@ -27,10 +51,5 @@ public class DefenderSpawner : MonoBehaviour
     {
         Debug.Log(worldPos);
         var newDefender = Instantiate(defenderPrefab, worldPos, Quaternion.identity) as Defender;
-    }
-
-    public void SetSelectedDefender(Defender selectedDefender)
-    {
-        defenderPrefab = selectedDefender;
     }
 }
