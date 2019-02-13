@@ -24,7 +24,10 @@ public class AttackerSpawner : MonoBehaviour
 
     void spawnEnemy()
     {
-        Instantiate(attackerPrefab, transform.position, Quaternion.identity);
+        var newAttacker = Instantiate(attackerPrefab, transform.position, Quaternion.identity);
+
+        // This makes the instantiated object a child of the object instantiating it
+        newAttacker.transform.parent = transform;
     }
 
     // Update is called once per frame
