@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5894402124992555695}
   - component: {fileID: 5922321448469473642}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Attacker Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2f6fb03e57c55419e3b08f7899c706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackerPrefab: {fileID: 0}
+  minSpawnDelay: 1
+  maxSpawnDelay: 5

@@ -18,11 +18,11 @@ public class AttackerSpawner : MonoBehaviour
         while (spawn)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minSpawnDelay, maxSpawnDelay));
-            spawnEnemy();
+            SpawnEnemy();
         }
     }
 
-    void spawnEnemy()
+    void SpawnEnemy()
     {
         var newAttacker = Instantiate(attackerPrefab, transform.position, Quaternion.identity);
 
