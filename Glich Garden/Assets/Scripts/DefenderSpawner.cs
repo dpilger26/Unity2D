@@ -27,11 +27,9 @@ public class DefenderSpawner : MonoBehaviour
 
     private void AttemptToPlaceDefenderAt(Vector2 gridPos)
     {
-        int defenderCost = defenderPrefab.GetStarCost();
-        if (starDisplay.HaveEnoughStars(defenderCost))
+        if (starDisplay.HaveEnoughStars(defenderPrefab.GetStarCost()))
         {
             SpawnDefender(gridPos);
-            starDisplay.SubtractStars(defenderCost);
         }
     }
 
@@ -49,7 +47,25 @@ public class DefenderSpawner : MonoBehaviour
 
     private void SpawnDefender(Vector2 worldPos)
     {
-        Debug.Log(worldPos);
-        var newDefender = Instantiate(defenderPrefab, worldPos, Quaternion.identity) as Defender;
+        if (!SquareOccupied(worldPos))
+        {
+            var newDefender = Instantiate(defenderPrefab, worldPos, Quaternion.identity) as Defender;
+            starDisplay.SubtractStars(defenderPrefab.GetStarCost());
+        }
+    }
+
+    private bool SquareOccupied(Vector2 worldPos)
+    {
+        var currentDefenders = FindObjectsOfType<Defender>();
+        foreach (Defender defender in currentDefenders)
+        {
+            if (Mathf.Abs(defender.transform.position.x - worldPos.x) <= Mathf.Epsilon &&
+                Mathf.Abs(defender.transform.position.y - worldPos.y) <= Mathf.Epsilon)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
