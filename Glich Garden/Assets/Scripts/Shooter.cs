@@ -11,9 +11,11 @@ public class Shooter : MonoBehaviour
     // cashed parameters
     AttackerSpawner[] attackerSpawners;
     AttackerSpawner myLaneSpawner;
+    Animator animator;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         SetLaneSpawner();
     }
 
@@ -21,11 +23,11 @@ public class Shooter : MonoBehaviour
     {
         if (IsAttackerInLane())
         {
-            Debug.Log("Pew Pew");
+            animator.SetBool("isAttacking", true); // sets a variable in the animator
         }
         else
         {
-            Debug.Log("sit and wait");
+            animator.SetBool("isAttacking", false); // sets a variable in the animator
         }
     }
 
