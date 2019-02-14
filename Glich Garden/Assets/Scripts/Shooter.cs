@@ -10,6 +10,7 @@ public class Shooter : MonoBehaviour
 
     // cashed parameters
     AttackerSpawner[] attackerSpawners;
+    AttackerSpawner myLaneSpawner;
 
     private void Start()
     {
@@ -18,14 +19,14 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        //if (IsAttackerInLane())
-        //{
-        //    Debug.Log("Pew Pew");
-        //}
-        //else
-        //{
-        //    Debug.Log("sit and wait");
-        //}
+        if (IsAttackerInLane())
+        {
+            Debug.Log("Pew Pew");
+        }
+        else
+        {
+            Debug.Log("sit and wait");
+        }
     }
 
     private void SetLaneSpawner()
@@ -33,14 +34,19 @@ public class Shooter : MonoBehaviour
         attackerSpawners = FindObjectsOfType<AttackerSpawner>();
         foreach (AttackerSpawner spawner in attackerSpawners)
         {
-
+            bool isCloseEnough = (Mathf.Abs(spawner.transform.position.y - transform.position.y) <= Mathf.Epsilon);
+            if (isCloseEnough)
+            {
+                myLaneSpawner = spawner;
+                break;
+            }
         }
     }
 
-    //private bool IsAttackerInLane()
-    //{
-
-    //}
+    private bool IsAttackerInLane()
+    {
+        return myLaneSpawner.transform.childCount > 0 ? true : false;
+    }
 
     public void ThrowProjectile()
     {
