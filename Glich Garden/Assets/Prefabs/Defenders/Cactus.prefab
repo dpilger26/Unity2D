@@ -222,5 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea66a863f3ab7e4a9890f9a51795bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 50
-  deathVFX: {fileID: 0}
+  startingHealth: 75
+  deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}

@@ -13,6 +13,8 @@ public class Attacker : MonoBehaviour
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
 
+        UpdateAnimation();
+
         if (transform.position.x < -2)
         {
             Destroy(gameObject);
@@ -28,5 +30,32 @@ public class Attacker : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
         currentTarget = target;
+    }
+
+    public void UpdateAnimation()
+    {
+        if (!currentTarget)
+        {
+            GetComponent<Animator>().SetBool("isAttacking", false);
+        }
+    }
+
+    public void StrikeCurrentTarget(int damage)
+    {
+        if (!currentTarget)
+        {
+            return;
+        }
+
+        var health = currentTarget.GetComponent<Health>();
+        if (health)
+        {
+            bool isDead = health.DealDamage(damage);
+
+            if (isDead)
+            {
+                currentTarget = null;
+            }
+        }
     }
 }

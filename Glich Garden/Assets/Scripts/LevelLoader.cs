@@ -21,7 +21,6 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-
     IEnumerator WaitAndLoadStartScene(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);

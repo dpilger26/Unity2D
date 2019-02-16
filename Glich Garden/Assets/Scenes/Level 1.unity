@@ -199,6 +199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4815190015312780963, guid: 9bec880afc2b85a4e8813295b840c2ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5894402124992555695, guid: 9bec880afc2b85a4e8813295b840c2ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,6 +284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815190015312780963, guid: 9bec880afc2b85a4e8813295b840c2ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5894402124992555695, guid: 9bec880afc2b85a4e8813295b840c2ef,
         type: 3}
@@ -589,6 +599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4815190015312780963, guid: 9bec880afc2b85a4e8813295b840c2ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5894402124992555695, guid: 9bec880afc2b85a4e8813295b840c2ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,8 +677,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1357313804}
   - component: {fileID: 1357313805}
-  - component: {fileID: 1357313807}
   - component: {fileID: 1357313806}
+  - component: {fileID: 1357313807}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -679,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357313803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.143, y: 0.03, z: 0}
+  m_LocalPosition: {x: -0.143, y: 0.03, z: 1}
   m_LocalScale: {x: 0.15, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1849796417}
@@ -721,7 +736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 3bae2711b6e8d1f4587b09376a93b42e, type: 3}
   m_Color: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
   m_FlipX: 1
@@ -789,8 +804,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1546405597}
   - component: {fileID: 1546405600}
-  - component: {fileID: 1546405599}
   - component: {fileID: 1546405598}
+  - component: {fileID: 1546405599}
   m_Layer: 0
   m_Name: Grave Stone
   m_TagString: Untagged
@@ -806,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546405596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.02, z: 0}
+  m_LocalPosition: {x: -0, y: -0.02, z: 1}
   m_LocalScale: {x: 0.1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1849796417}
@@ -888,7 +903,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 3b33ab9d6917d214d83ffa79cf83c178, type: 3}
   m_Color: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 1}
   m_FlipX: 0
@@ -1210,6 +1225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4815190015312780963, guid: 9bec880afc2b85a4e8813295b840c2ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5894402124992555695, guid: 9bec880afc2b85a4e8813295b840c2ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1482,7 +1502,7 @@ PrefabInstance:
     - target: {fileID: 3384514994428632352, guid: 750923620a9040543afaffcef417d3a8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3384514994428632352, guid: 750923620a9040543afaffcef417d3a8,
         type: 3}
@@ -1537,6 +1557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815190015312780963, guid: 9bec880afc2b85a4e8813295b840c2ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5894402124992555695, guid: 9bec880afc2b85a4e8813295b840c2ef,
         type: 3}

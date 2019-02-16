@@ -16,13 +16,17 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void DealDamage(int damage)
+    // returns true if the object has died
+    public bool DealDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             TriggerDeathSequence();
+            return true;
         }
+
+        return false;
     }
 
     private void TriggerDeathSequence()
