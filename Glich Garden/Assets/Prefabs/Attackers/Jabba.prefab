@@ -90,9 +90,10 @@ GameObject:
   - component: {fileID: 6769975808406478470}
   - component: {fileID: 6769975808406478469}
   - component: {fileID: 6769975808406478468}
+  - component: {fileID: 6769975808406478471}
   - component: {fileID: 6769975808406478467}
   - component: {fileID: 6769975808406478466}
-  - component: {fileID: 6769975808406478471}
+  - component: {fileID: 6082143543015309061}
   m_Layer: 0
   m_Name: Jabba
   m_TagString: Untagged
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.059414625}
+  m_Offset: {x: -0.20746295, y: 0.059414625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -139,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.88117075}
+  m_Size: {x: 0.58507407, y: 0.88117075}
   m_EdgeRadius: 0
 --- !u!50 &6769975808406478468
 Rigidbody2D:
@@ -162,6 +163,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6769975808406478471
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769975808406478465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8fe763832807cc4893ddda8f8e24bbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6769975808406478467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,22 +208,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
---- !u!95 &6769975808406478471
-Animator:
-  serializedVersion: 3
+--- !u!114 &6082143543015309061
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6769975808406478465}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8fe763832807cc4893ddda8f8e24bbf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b17f312c841ae94596134b489917e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

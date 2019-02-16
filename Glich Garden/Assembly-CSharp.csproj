@@ -62,15 +62,22 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Attacker.cs" />
     <Compile Include="Assets\Scripts\AttackerSpawner.cs" />
+    <Compile Include="Assets\Scripts\Cactus.cs" />
     <Compile Include="Assets\Scripts\Defender.cs" />
     <Compile Include="Assets\Scripts\DefenderButton.cs" />
     <Compile Include="Assets\Scripts\DefenderSpawner.cs" />
+    <Compile Include="Assets\Scripts\Fox.cs" />
+    <Compile Include="Assets\Scripts\Gnome.cs" />
+    <Compile Include="Assets\Scripts\GraveStone.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\Jabba.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\Lizard.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\StarDisplay.cs" />
+    <Compile Include="Assets\Scripts\Trophy.cs" />
+    <Compile Include="Assets\Scripts\WierdYellowThing.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackerSpawner : MonoBehaviour
 {
     // configuration parameters
-    [SerializeField] GameObject attackerPrefab;
+    [SerializeField] Attacker[] attackerPrefabs;
     [SerializeField] int minSpawnDelay = 1;
     [SerializeField] int maxSpawnDelay = 5;
 
@@ -18,21 +18,21 @@ public class AttackerSpawner : MonoBehaviour
         while (spawn)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minSpawnDelay, maxSpawnDelay));
-            SpawnEnemy();
+            SpawnAttacker();
         }
     }
 
-    void SpawnEnemy()
+    void SpawnAttacker()
     {
-        var newAttacker = Instantiate(attackerPrefab, transform.position, Quaternion.identity);
+        var attacker = attackerPrefabs[UnityEngine.Random.Range(0, attackerPrefabs.Length)];
+        Spawn(attacker);
+    }
+
+    private void Spawn(Attacker attacker)
+    {
+        var newAttacker = Instantiate(attacker, transform.position, Quaternion.identity);
 
         // This makes the instantiated object a child of the object instantiating it
         newAttacker.transform.parent = transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
