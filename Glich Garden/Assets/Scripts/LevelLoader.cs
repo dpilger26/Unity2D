@@ -33,6 +33,13 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(++currentSceneIndex);
     }
 
+    public void LoadLossScene()
+    {
+        // just go back to the start screen
+        currentSceneIndex = 0;
+        LoadNextScene();
+    }
+
     public void QuitGame()
     {
         Application.Quit();

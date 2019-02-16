@@ -14,11 +14,6 @@ public class Attacker : MonoBehaviour
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
 
         UpdateAnimation();
-
-        if (transform.position.x < -2)
-        {
-            Destroy(gameObject);
-        }
     }
 
     public void SetMovementSpeed(float speed)

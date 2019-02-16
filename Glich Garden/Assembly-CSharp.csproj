@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Attacker.cs" />
     <Compile Include="Assets\Scripts\AttackerSpawner.cs" />
+    <Compile Include="Assets\Scripts\Base.cs" />
     <Compile Include="Assets\Scripts\Cactus.cs" />
     <Compile Include="Assets\Scripts\Defender.cs" />
     <Compile Include="Assets\Scripts\DefenderButton.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\Gnome.cs" />
     <Compile Include="Assets\Scripts\GraveStone.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\HealthDisplay.cs" />
     <Compile Include="Assets\Scripts\Jabba.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\Lizard.cs" />
