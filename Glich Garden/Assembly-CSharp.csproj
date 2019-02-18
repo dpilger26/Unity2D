@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DefenderButton.cs" />
     <Compile Include="Assets\Scripts\DefenderSpawner.cs" />
     <Compile Include="Assets\Scripts\Fox.cs" />
+    <Compile Include="Assets\Scripts\GameTimer.cs" />
     <Compile Include="Assets\Scripts\Gnome.cs" />
     <Compile Include="Assets\Scripts\GraveStone.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
