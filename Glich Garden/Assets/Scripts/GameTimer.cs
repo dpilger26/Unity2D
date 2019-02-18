@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {
     // configurable parameters
-    [Tooltip("Our Level Timer in secodns")]
+    [Tooltip("Our Level Timer in seconds")]
     [SerializeField] float levelTime = 10f;
 
     // cached parameters
@@ -15,27 +15,26 @@ public class GameTimer : MonoBehaviour
     private void Start()
     {
         timeSlider = GetComponent<Slider>();
-
         UpdateSlider();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         UpdateSlider();
-
-        if (LevelFinished())
-        {
-            Debug.Log("Level Finished");
-        }
     }
 
-    void UpdateSlider()
+    private void UpdateSlider()
     {
+        if (TimerComplete())
+        {
+            return;
+        }
+
         timeSlider.value = Time.timeSinceLevelLoad / levelTime;
     }
 
-    bool LevelFinished()
+    public bool TimerComplete()
     {
         return Time.timeSinceLevelLoad >= levelTime ? true : false;
     }

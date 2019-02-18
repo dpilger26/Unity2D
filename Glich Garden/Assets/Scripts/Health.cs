@@ -8,12 +8,16 @@ public class Health : MonoBehaviour
     [SerializeField] int startingHealth = 100;
     [SerializeField] GameObject deathVFX;
 
+    // cached parameters
+    LevelController levelController;
+
     // state parameters
     int currentHealth;
 
     private void Start()
     {
         currentHealth = startingHealth;
+        levelController = FindObjectOfType<LevelController>();
     }
 
     // returns true if the object has died
@@ -36,6 +40,8 @@ public class Health : MonoBehaviour
             var explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
             Destroy(explosion, 1f);
         }
+
+        levelController.DecrementAliveAttackers();
         Destroy(gameObject);
     }
 }

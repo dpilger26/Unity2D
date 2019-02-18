@@ -9,13 +9,18 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] int minSpawnDelay = 1;
     [SerializeField] int maxSpawnDelay = 5;
 
-    // state parameters
-    bool spawn = true;
+    // cashed parameters
+    GameTimer gameTimer;
+
+    private void Awake()
+    {
+        gameTimer = FindObjectOfType<GameTimer>();
+    }
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        while (spawn)
+        while (!gameTimer.TimerComplete())
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minSpawnDelay, maxSpawnDelay));
             SpawnAttacker();

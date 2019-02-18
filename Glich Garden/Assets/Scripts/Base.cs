@@ -7,6 +7,9 @@ public class Base : MonoBehaviour
     // configuration parameters
     [SerializeField] int startingHealth = 10;
 
+    // cached parameters
+    LevelController levelController;
+
     // state parameters
     int currentHealth;
 
@@ -14,6 +17,7 @@ public class Base : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
+        levelController = FindObjectOfType<LevelController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,8 +27,9 @@ public class Base : MonoBehaviour
 
     private void HandleHit(Collider2D collision)
     {
-        Destroy(collision.gameObject);
         currentHealth--;
+        levelController.DecrementAliveAttackers();
+        Destroy(collision.gameObject);
 
         if (currentHealth <= 0)
         {

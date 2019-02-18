@@ -8,6 +8,12 @@ public class Attacker : MonoBehaviour
     float currentSpeed = 1f;
     GameObject currentTarget;
 
+    private void Awake()
+    {
+        var levelController = FindObjectOfType<LevelController>();
+        levelController.IncramentAliveAttackers();
+    }
+
     // Update is called once per frame
     private void Update()
     {
