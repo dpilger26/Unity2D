@@ -28,9 +28,22 @@ public class LevelLoader : MonoBehaviour
 
     }
 
+    public void LoadStartMenu()
+    {
+        currentSceneIndex = 0;
+        LoadNextScene();
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(++currentSceneIndex);
+        Time.timeScale = 1;
+    }
+
+    public void ReplayLevel()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1;
     }
 
     public void LoadLossScene()

@@ -27,13 +27,14 @@ public class Base : MonoBehaviour
 
     private void HandleHit(Collider2D collision)
     {
-        currentHealth--;
-        levelController.DecrementAliveAttackers();
         Destroy(collision.gameObject);
 
+        levelController.DecrementAliveAttackers();
+
+        currentHealth--;
         if (currentHealth <= 0)
         {
-            FindObjectOfType<LevelLoader>().LoadLossScene();
+            levelController.TriggerLossScreen();
         }
     }
 

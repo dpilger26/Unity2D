@@ -6,10 +6,12 @@ public class LevelController : MonoBehaviour
 {
     // configuration parameters
     [SerializeField] GameObject winLabel;
+    [SerializeField] GameObject lossLabel;
     [SerializeField] float nextLevelDelay = 3f;
 
     // state parameters
     int numberOfAliveAttackers = 0;
+    bool gameLost = false;
 
     // cached parameters
     GameTimer gameTimer;
@@ -17,6 +19,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         winLabel.SetActive(false);
+        lossLabel.SetActive(false);
         gameTimer = FindObjectOfType<GameTimer>();
     }
 
@@ -32,6 +35,11 @@ public class LevelController : MonoBehaviour
 
     public void DecrementAliveAttackers()
     {
+        if (gameLost)
+        {
+            return;
+        }
+
         --numberOfAliveAttackers;
 
         if (gameTimer.TimerComplete() && numberOfAliveAttackers <= 0)
@@ -43,12 +51,28 @@ public class LevelController : MonoBehaviour
     private IEnumerator HandleWinCondition()
     {
         winLabel.SetActive(true);
-        Debug.Log("Playing Audio");
         GetComponent<AudioSource>().Play();
-        Debug.Log("Done Playing Audio");
 
         yield return new WaitForSeconds(nextLevelDelay);
 
-        FindObjectOfType<LevelLoader>().LoadNextScene();
+        //FindObjectOfType<LevelLoader>().LoadNextScene();
+        FindObjectOfType<LevelLoader>().ReplayLevel();
+    }
+
+    public void TriggerLossScreen()
+    {
+        if (gameLost)
+        {
+            return;
+        }
+
+        gameLost = true;
+        lossLabel.SetActive(true);
+        Time.timeScale = 0;  // Stops the time
+    }
+
+    public bool GameLost()
+    {
+        return gameLost;
     }
 }

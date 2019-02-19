@@ -50,6 +50,8 @@ public class DefenderSpawner : MonoBehaviour
         if (!SquareOccupied(worldPos))
         {
             var newDefender = Instantiate(defenderPrefab, worldPos, Quaternion.identity) as Defender;
+            newDefender.transform.parent = transform;
+
             starDisplay.SubtractStars(defenderPrefab.GetStarCost());
         }
     }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winLabel: {fileID: 0}
+  lossLabel: {fileID: 0}
   nextLevelDelay: 5
 --- !u!82 &1705131476658060921
 AudioSource:
