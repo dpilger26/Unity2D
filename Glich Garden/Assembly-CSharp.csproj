@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\LevelController.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\Lizard.cs" />
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\OptionsController.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsController.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Shooter.cs" />
