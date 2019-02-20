@@ -55,8 +55,7 @@ public class LevelController : MonoBehaviour
 
         yield return new WaitForSeconds(nextLevelDelay);
 
-        //FindObjectOfType<LevelLoader>().LoadNextScene();
-        FindObjectOfType<LevelLoader>().ReplayLevel();
+        FindObjectOfType<LevelLoader>().LoadNextScene();
     }
 
     public void TriggerLossScreen()
