@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderButton : MonoBehaviour
 {
@@ -15,7 +16,16 @@ public class DefenderButton : MonoBehaviour
     {
         buttons = FindObjectsOfType<DefenderButton>();
         notAvailableColor = GetComponent<SpriteRenderer>().color;
+
+        LabelButtonsWithCost();
     }
+
+    private void LabelButtonsWithCost()
+    {
+        Text costText = GetComponentInChildren<Text>();
+        costText.text = defenderPrefab.GetStarCost().ToString();
+    }
+
     private void OnMouseDown()
     {
         UpdateButtonColors();
