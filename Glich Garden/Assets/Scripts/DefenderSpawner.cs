@@ -9,6 +9,19 @@ public class DefenderSpawner : MonoBehaviour
 
     // cashed parameters
     StarDisplay starDisplay;
+    GameObject defenderParent; // keep the heirarchy clean!
+
+    // constants
+    const string DEFENDER_PARENT_NAME = "Defenders";
+
+    private void Start()
+    {
+        defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+        if (!defenderParent)
+        {
+            defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+        }
+    }
 
     private void Update()
     {
@@ -50,7 +63,7 @@ public class DefenderSpawner : MonoBehaviour
         if (!SquareOccupied(worldPos))
         {
             var newDefender = Instantiate(defenderPrefab, worldPos, Quaternion.identity) as Defender;
-            newDefender.transform.parent = transform;
+            newDefender.transform.parent = defenderParent.transform;
 
             starDisplay.SubtractStars(defenderPrefab.GetStarCost());
         }

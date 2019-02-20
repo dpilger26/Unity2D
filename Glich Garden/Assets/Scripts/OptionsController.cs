@@ -7,8 +7,9 @@ public class OptionsController : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
     [SerializeField] [Range(0, 1)] float defaultVolume = 0.8f;
+
     [SerializeField] Slider difficultySlider;
-    [SerializeField] [Range(0, 1)] float defaultDifficulty = 0.5f;
+    [SerializeField] [Range(1, 10)] float defaultDifficulty = 5f;
 
     // cashed references
     MusicPlayer musicPlayer;
@@ -23,7 +24,7 @@ public class OptionsController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public void UpdateVolume()
     {
         musicPlayer.SetVolume(volumeSlider.value);
     }

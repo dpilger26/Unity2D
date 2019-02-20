@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
-    // configuration parameters
-    [SerializeField] int startingHealth = 10;
+    // constants
+    const float BASE_HEALTH = 4;
 
     // cached parameters
     LevelController levelController;
 
     // state parameters
-    int currentHealth;
+    float currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = startingHealth;
+        currentHealth = BASE_HEALTH - PlayerPrefsController.GetDifficulty();
         levelController = FindObjectOfType<LevelController>();
     }
 
@@ -38,7 +38,7 @@ public class Base : MonoBehaviour
         }
     }
 
-    public int GetCurrentHealth()
+    public float GetCurrentHealth()
     {
         return currentHealth;
     }

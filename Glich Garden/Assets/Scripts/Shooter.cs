@@ -12,9 +12,19 @@ public class Shooter : MonoBehaviour
     AttackerSpawner[] attackerSpawners;
     AttackerSpawner myLaneSpawner;
     Animator animator;
+    GameObject projectileParent; // keep the heirarchy clean!
+
+    // constants
+    const string PROJECTILE_PARENT_NAME = "Projectiles";
 
     private void Start()
     {
+        projectileParent = GameObject.Find(PROJECTILE_PARENT_NAME);
+        if (!projectileParent)
+        {
+            projectileParent = new GameObject(PROJECTILE_PARENT_NAME);
+        }
+
         animator = GetComponent<Animator>();
         SetLaneSpawner();
     }
@@ -52,6 +62,7 @@ public class Shooter : MonoBehaviour
 
     public void ThrowProjectile()
     {
-        Instantiate(projectilePrefab, gun.transform.position, Quaternion.identity);
+        var projectile = Instantiate(projectilePrefab, gun.transform.position, Quaternion.identity);
+        projectile.transform.parent = projectileParent.transform;
     }
 }
