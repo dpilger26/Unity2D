@@ -8,12 +8,17 @@ public class Player : MonoBehaviour
     // configuration parameters
     [SerializeField] float runSpeed = 5f;
 
+    // state parameters
+    bool isAlive = true;
+
     // cached references
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer mySpriteRenderer;
+    Animator myAnimator;
 
     private void Start()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,21 +29,28 @@ public class Player : MonoBehaviour
 
     private void Run()
     {
-        var deltaTime = Time.deltaTime * runSpeed; // NOTE: makes things time independent
-        var deltaX = Input.GetAxis("Horizontal") * deltaTime;
+        var deltaX = Input.GetAxis("Horizontal");
+        bool isMoving = Mathf.Abs(deltaX) > Mathf.Epsilon;
 
-        if (Mathf.Abs(deltaX) < Mathf.Epsilon)
+        UpdateAnimationState(isMoving);
+        if (!isMoving)
         {
-            // not moving
             return;
         }
 
         UpdateSpriteDirection(deltaX);
-        transform.position = new Vector2(transform.position.x + deltaX, transform.position.y);
+
+        var deltaTime = Time.deltaTime * runSpeed; // NOTE: makes things time independent
+        transform.position = new Vector2(transform.position.x + deltaX * deltaTime, transform.position.y);
     }
 
     private void UpdateSpriteDirection(float deltaX)
     {
-        spriteRenderer.flipX = deltaX < 0 ? true : false;
+        mySpriteRenderer.flipX = deltaX < 0 ? true : false;
+    }
+
+    private void UpdateAnimationState(bool isRunning)
+    {
+        myAnimator.SetBool("isRunning", isRunning);
     }
 }
