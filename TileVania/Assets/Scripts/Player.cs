@@ -15,12 +15,14 @@ public class Player : MonoBehaviour
     // cached references
     SpriteRenderer mySpriteRenderer;
     Rigidbody2D myRigidBody;
+    Collider2D myCollider;
     Animator myAnimator;
 
     private void Start()
     {
         mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<Collider2D>();
         myAnimator = GetComponent<Animator>();
     }
 
@@ -60,6 +62,11 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             myRigidBody.velocity += new Vector2(0f, jumpSpeed);
