@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     // configuration parameters
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float climbSpeed = 5f;
 
     // state parameters
     bool isAlive = true;
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     {
         Run();
         Jump();
+        ClimbLadder();
     }
 
     private void Run()
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour
         var deltaX = Input.GetAxis("Horizontal");
         bool isMoving = Mathf.Abs(deltaX) > Mathf.Epsilon;
 
-        UpdateAnimationState(isMoving);
+        UpdateRunAnimationState(isMoving);
         if (!isMoving)
         {
             return;
@@ -55,14 +57,19 @@ public class Player : MonoBehaviour
         mySpriteRenderer.flipX = deltaX < 0 ? true : false;
     }
 
-    private void UpdateAnimationState(bool isRunning)
+    private void UpdateRunAnimationState(bool isRunning)
     {
         myAnimator.SetBool("isRunning", isRunning);
     }
 
+    private void UpdateClimbAnimationState(bool isClimbing)
+    {
+        myAnimator.SetBool("isClimbing", isClimbing);
+    }
+
     private void Jump()
     {
-        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!IsTouchingGround())
         {
             return;
         }
@@ -71,5 +78,41 @@ public class Player : MonoBehaviour
         {
             myRigidBody.velocity += new Vector2(0f, jumpSpeed);
         }
+    }
+
+    private void ClimbLadder()
+    {
+        if (!IsTouchingLadder())
+        {
+            UpdateClimbAnimationState(false);
+            return;
+        }
+
+        var deltaY = Input.GetAxis("Vertical");
+        if (deltaY < 0f && IsTouchingGround())
+        {
+            UpdateClimbAnimationState(false);
+            return;
+        }
+
+        bool isClimbing = Mathf.Abs(deltaY) > Mathf.Epsilon;
+
+        UpdateClimbAnimationState(isClimbing);
+        if (!isClimbing)
+        {
+            return;
+        }
+
+        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, climbSpeed);
+    }
+
+    private bool IsTouchingGround()
+    {
+        return myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    }
+
+    private bool IsTouchingLadder()
+    {
+        return myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
     }
 }
