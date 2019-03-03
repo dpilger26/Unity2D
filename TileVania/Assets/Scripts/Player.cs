@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
 
+    // constants
+    float beginningGravityScale;
+
     // state parameters
     bool isAlive = true;
 
@@ -25,6 +28,8 @@ public class Player : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<Collider2D>();
         myAnimator = GetComponent<Animator>();
+
+        beginningGravityScale = myRigidBody.gravityScale;
     }
 
     // Update is called once per frame
@@ -85,25 +90,16 @@ public class Player : MonoBehaviour
         if (!IsTouchingLadder())
         {
             UpdateClimbAnimationState(false);
+            myRigidBody.gravityScale = beginningGravityScale;
             return;
         }
 
         var deltaY = Input.GetAxis("Vertical");
-        if (deltaY < 0f && IsTouchingGround())
-        {
-            UpdateClimbAnimationState(false);
-            return;
-        }
-
         bool isClimbing = Mathf.Abs(deltaY) > Mathf.Epsilon;
-
         UpdateClimbAnimationState(isClimbing);
-        if (!isClimbing)
-        {
-            return;
-        }
 
-        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, climbSpeed);
+        myRigidBody.gravityScale = 0f;
+        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, deltaY * climbSpeed);
     }
 
     private bool IsTouchingGround()
