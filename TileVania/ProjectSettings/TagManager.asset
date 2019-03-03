@@ -44,12 +44,12 @@ TagManager:
   - name: Background
     uniqueID: 1219483291
     locked: 0
+  - name: Ladder
+    uniqueID: 2402537345
+    locked: 0
   - name: Player
     uniqueID: 2102381029
     locked: 0
   - name: Foreground
     uniqueID: 115273581
-    locked: 0
-  - name: Ladder
-    uniqueID: 2402537345
     locked: 0

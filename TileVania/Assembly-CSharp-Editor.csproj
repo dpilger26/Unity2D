@@ -83,6 +83,12 @@
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/pilgeda/Documents/GitHub/Udemy/Unity2D/TileVania/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/pilgeda/Documents/GitHub/Udemy/Unity2D/TileVania/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/Users/pilgeda/Documents/GitHub/Udemy/Unity2D/TileVania/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
