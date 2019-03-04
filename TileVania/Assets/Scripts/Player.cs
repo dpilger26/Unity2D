@@ -19,14 +19,16 @@ public class Player : MonoBehaviour
     // cached references
     SpriteRenderer mySpriteRenderer;
     Rigidbody2D myRigidBody;
-    Collider2D myCollider;
+    CapsuleCollider2D myCollider;
+    BoxCollider2D feetCollider;
     Animator myAnimator;
 
     private void Start()
     {
         mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<Collider2D>();
+        myCollider = GetComponent<CapsuleCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
 
         beginningGravityScale = myRigidBody.gravityScale;
@@ -104,7 +106,7 @@ public class Player : MonoBehaviour
 
     private bool IsTouchingGround()
     {
-        return myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        return feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
     }
 
     private bool IsTouchingLadder()
