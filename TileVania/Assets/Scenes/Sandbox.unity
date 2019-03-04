@@ -157497,6 +157497,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &1359210553 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5197761520637153450, guid: 289c4977e083d884e8fc7087aba74506,
+    type: 3}
+  m_PrefabInstance: {fileID: 5197761519462742344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1359210554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5197761520637153451, guid: 289c4977e083d884e8fc7087aba74506,
@@ -157580,6 +157586,31 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 759270245}
+    - target: {fileID: 8335116354390667921, guid: 598623dd2a094e84c98ee7a8d822d48b,
+        type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335116354390667921, guid: 598623dd2a094e84c98ee7a8d822d48b,
+        type: 3}
+      propertyPath: m_AnimatedTarget
+      value: 
+      objectReference: {fileID: 1359210553}
+    - target: {fileID: 2932087746572261835, guid: 598623dd2a094e84c98ee7a8d822d48b,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1359210554}
+    - target: {fileID: 5721853487777144863, guid: 598623dd2a094e84c98ee7a8d822d48b,
+        type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 759270245}
+    - target: {fileID: 8506599846600146750, guid: 598623dd2a094e84c98ee7a8d822d48b,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1359210554}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 598623dd2a094e84c98ee7a8d822d48b, type: 3}
 --- !u!1001 &5197761519462742344
