@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] float deathSpeed = 100f;
 
     // constants
     float beginningGravityScale;
@@ -36,6 +37,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
+
         Run();
         Jump();
         ClimbLadder();
@@ -111,5 +117,21 @@ public class Player : MonoBehaviour
     private bool IsTouchingLadder()
     {
         return myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            DeathSequence();
+        }
+    }
+
+    private void DeathSequence()
+    {
+        isAlive = false;
+        myAnimator.SetTrigger("isDead");
+        mySpriteRenderer.color = Color.red;
+        myRigidBody.velocity = new Vector2(0, deathSpeed);
     }
 }
