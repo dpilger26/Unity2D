@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
         beginningGravityScale = myRigidBody.gravityScale;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         Run();
