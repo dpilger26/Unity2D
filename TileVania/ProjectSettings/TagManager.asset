@@ -15,12 +15,12 @@ TagManager:
   - 
   - 
   - Ground
+  - Water2
+  - Spikes
   - Ladder
   - Player
-  - Background
   - Enemy
-  - 
-  - 
+  - Background
   - 
   - 
   - 
@@ -45,6 +45,15 @@ TagManager:
   - name: Background
     uniqueID: 1219483291
     locked: 0
+  - name: Foreground
+    uniqueID: 115273581
+    locked: 0
+  - name: Water
+    uniqueID: 328311965
+    locked: 0
+  - name: Spikes
+    uniqueID: 2508454139
+    locked: 0
   - name: Ladder
     uniqueID: 2402537345
     locked: 0
@@ -53,7 +62,4 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1557767453
-    locked: 0
-  - name: Foreground
-    uniqueID: 115273581
     locked: 0

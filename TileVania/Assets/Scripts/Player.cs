@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
         Run();
         Jump();
         ClimbLadder();
+
+        if (IsTouchingHazard())
+        {
+            DeathSequence();
+        }
     }
 
     private void Run()
@@ -117,6 +122,11 @@ public class Player : MonoBehaviour
     private bool IsTouchingLadder()
     {
         return myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+    }
+
+    private bool IsTouchingHazard()
+    {
+        return myCollider.IsTouchingLayers(LayerMask.GetMask("Water2", "Spikes"));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

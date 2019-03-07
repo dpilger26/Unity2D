@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1241573858}
   - component: {fileID: 1359210550}
   - component: {fileID: 1241573862}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Ginger Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,8 +89,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04792857, y: -0.04942411}
-  m_Size: {x: 0.6190152, y: 0.8952409}
+  m_Offset: {x: -0.053826094, y: -0.04942411}
+  m_Size: {x: 0.7605519, y: 0.8952409}
   m_Direction: 0
 --- !u!61 &1359210550
 BoxCollider2D:
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5197761520715882851}
   - component: {fileID: 5197761520715882852}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2102381029
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 9931e3518ce80f242873855d72f82b67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
