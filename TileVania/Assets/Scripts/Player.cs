@@ -7,11 +7,18 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     // configuration parameters
+    [Header("Speed Options")]
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float deathSpeed = 100f;
     [SerializeField] float respawnDelay = 2f;
+
+    [Header("Sound Options")]
+    [SerializeField] AudioClip jumpClip;
+    [SerializeField] [Range(0, 1)] float jumpVolume = 0.25f;
+    [SerializeField] AudioClip deathClip;
+    [SerializeField] [Range(0, 1)] float deathVolume = 0.5f;
 
     // constants
     float beginningGravityScale;
@@ -95,6 +102,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            PlayJumpSound();
             myRigidBody.velocity += new Vector2(0f, jumpSpeed);
         }
     }
@@ -141,6 +149,8 @@ public class Player : MonoBehaviour
 
     private void DeathSequence()
     {
+        PlayDeathSound();
+
         isAlive = false;
         myAnimator.SetTrigger("isDead");
         mySpriteRenderer.color = Color.red;
@@ -154,5 +164,15 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(respawnDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void PlayJumpSound()
+    {
+        AudioSource.PlayClipAtPoint(jumpClip, Camera.main.transform.position, jumpVolume);
+    }
+
+    private void PlayDeathSound()
+    {
+        AudioSource.PlayClipAtPoint(deathClip, Camera.main.transform.position, deathVolume);
     }
 }

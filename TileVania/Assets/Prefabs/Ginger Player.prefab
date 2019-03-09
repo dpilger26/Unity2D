@@ -134,6 +134,11 @@ MonoBehaviour:
   jumpSpeed: 28
   climbSpeed: 5
   deathSpeed: 50
+  respawnDelay: 2
+  jumpClip: {fileID: 8300000, guid: 39fa8cd8b7b3324438e8efac0010ddd4, type: 3}
+  jumpVolume: 0.4
+  deathClip: {fileID: 8300000, guid: dc29a5db1d932bb4f82878fb20a5ef71, type: 3}
+  deathVolume: 1
 --- !u!1 &5197761520715882850
 GameObject:
   m_ObjectHideFlags: 0

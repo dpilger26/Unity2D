@@ -69,6 +69,7 @@
     <Compile Include="Assets\2d-extras-master\Assets\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Exit.cs" />
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <None Include="Assets\2d-extras-master\Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
     <Reference Include="Cinemachine">
