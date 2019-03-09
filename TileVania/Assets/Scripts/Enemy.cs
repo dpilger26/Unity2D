@@ -36,6 +36,4 @@ public class Enemy : MonoBehaviour
     {
         transform.localScale = new Vector2(-Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
-
-
 }

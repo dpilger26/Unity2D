@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     CapsuleCollider2D myCollider;
     BoxCollider2D feetCollider;
     Animator myAnimator;
+    GameScore gameScore;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
         myCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
         myAnimator = GetComponent<Animator>();
+        gameScore = FindObjectOfType<GameScore>();
 
         beginningGravityScale = myRigidBody.gravityScale;
     }
@@ -163,6 +165,7 @@ public class Player : MonoBehaviour
     IEnumerator ResartLevel()
     {
         yield return new WaitForSecondsRealtime(respawnDelay);
+        gameScore.ResetScoreOnDeath();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

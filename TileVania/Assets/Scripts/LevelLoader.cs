@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    // cashed parameters
+    GameScore gameScore;
+
+    private void Start()
+    {
+        gameScore = FindObjectOfType<GameScore>();
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
@@ -13,5 +21,6 @@ public class LevelLoader : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gameScore.ResetScore();
     }
 }
