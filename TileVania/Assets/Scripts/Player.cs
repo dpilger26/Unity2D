@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] float deathSpeed = 100f;
+    [SerializeField] float respawnDelay = 2f;
 
     // constants
     float beginningGravityScale;
@@ -143,5 +145,14 @@ public class Player : MonoBehaviour
         myAnimator.SetTrigger("isDead");
         mySpriteRenderer.color = Color.red;
         myRigidBody.velocity = new Vector2(0, deathSpeed);
+        myCollider.enabled = false;
+
+        StartCoroutine(ResartLevel());
+    }
+
+    IEnumerator ResartLevel()
+    {
+        yield return new WaitForSecondsRealtime(respawnDelay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
